@@ -1,0 +1,13 @@
+<ons-page ng-controller="TodoListController as $ctrl" ons-init="$ctrl.init()">
+  <ons-toolbar>
+    <div class="center">一覧</div>
+    <div class="right">
+      <ons-toolbar-button ng-click="$ctrl.add()">追加</ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <ons-list>
+    <ons-list-item modifier="chevron" tappable ng-repeat="todo in $ctrl.todos" ng-click="$ctrl.edit(todo)">
+      {{todo.text}}
+    </ons-list-item>
+  </ons-list>
+</ons-page>

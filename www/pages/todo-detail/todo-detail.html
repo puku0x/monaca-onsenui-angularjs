@@ -1,0 +1,23 @@
+<ons-page ng-controller="TodoDetailController as $ctrl" ons-init="$ctrl.init()">
+  <ons-toolbar>
+      <div class="left">
+        <ons-back-button>戻る</ons-back-button>
+      </div>
+      <div class="center">詳細</div>
+      <div class="right">
+        <ons-toolbar-button ng-click="$ctrl.save()">保存</ons-toolbar-button>
+      </div>
+  </ons-toolbar>
+  <ons-list>
+    <ons-list-header>内容</ons-list-header>
+    <ons-list-item>
+      <ons-input class="full-width" ng-model="$ctrl.todo.text"></ons-input>
+    </ons-list-item>
+  </ons-list>
+
+  <ons-bottom-toolbar ng-show="$ctrl.todo.id !== null">
+    <div style="text-align: center; line-height: 44px;">
+      <ons-toolbar-button style="color:#f44336" ng-click="$ctrl.delete()">削除</ons-toolbar-button>
+    </div>
+  </ons-bottom-toolbar>
+</ons-page>

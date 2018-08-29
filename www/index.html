@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <script src="components/loader.js"></script>
+  <script src="lib/angular/angular.min.js"></script>
+  <script src="lib/ng-cordova/dist/ng-cordova.min.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
-
+  <script src="lib/angularjs-onsenui/dist/angularjs-onsenui.min.js"></script>
   <link rel="stylesheet" href="components/loader.css">
-  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="./lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="./lib/onsenui/css/onsen-css-components.css">
   <link rel="stylesheet" href="css/style.css">
-
-  <script>
-    ons.ready(function() {
-      console.log("Onsen UI is ready!");
-    });
-  </script>
+  <link rel="stylesheet" href="pages/todo-list/todo-list.css">
+  <link rel="stylesheet" href="pages/todo-detail/todo-detail.css">
 </head>
 <body>
-  This is a template for Onsen UI app.
+  <ons-navigator var="nav" page="pages/todo-list/todo-list.html"></ons-navigator>
+
+  <ons-modal var="spinner">
+    <ons-icon icon="ion-load-c" spin="true"></ons-icon>
+  </ons-modal>
+
+  <script src="app.js"></script>
+  <script src="services/todo.service.js"></script>
+  <script src="pages/todo-list/todo-list.controller.js"></script>
+  <script src="pages/todo-detail/todo-detail.controller.js"></script>
 </body>
 </html>
